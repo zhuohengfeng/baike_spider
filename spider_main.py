@@ -3,7 +3,6 @@
 # @Time    : 2018/5/7 下午11:37
 # @Author  : zhuo_hf@foxmail.com
 # @File    : spider_main.py
-
 import url_manager, html_downloader, html_outputer, html_parser
 
 
@@ -34,11 +33,13 @@ class SpiderMain(object):
                 if count == 1000:
                     break
                 count = count + 1
-            except:
+            except Exception as e:
+                print(e)
                 print('craw failed!!!!')
         self.outputer.output_html()
 
+
 if __name__ == '__main__':
-    root_url = "http://baike.baidu.com/item/python"
+    root_url = "https://baike.baidu.com/item/python/407313"
     obj_spider = SpiderMain()
     obj_spider.craw(root_url)

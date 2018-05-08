@@ -9,9 +9,9 @@ class HtmlOutputer(object):
         self.datas = []
 
     def collect_data(self, new_data):
-        if data is None:
+        if new_data is None:
             return
-        self.datas.append(data)
+        self.datas.append(new_data)
 
     def output_html(self):
         fout = open('output.html', 'w')
